@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wall_social_media_app_flutter/components/my_button.dart';
 import 'package:wall_social_media_app_flutter/components/my_textfield.dart';
+import 'package:wall_social_media_app_flutter/components/square_tile.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -19,6 +20,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 50,
@@ -82,7 +84,7 @@ class LoginPage extends StatelessWidget {
                 height: 50.0,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 25.0,
                 ),
                 child: Row(
@@ -93,12 +95,16 @@ class LoginPage extends StatelessWidget {
                         color: Colors.grey[400],
                       ),
                     ),
-                    const Text(
-                      "Or continue with",
-                      style: TextStyle(
-                        color: Color(0xFF616161),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.0,
                       ),
-
+                      child: Text(
+                        "Or continue with",
+                        style: TextStyle(
+                          color: Color(0xFF616161),
+                        ),
+                      ),
                     ),
                     Expanded(
                       child: Divider(
@@ -108,7 +114,45 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 50.0,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SquareTile(
+                    imagePath: "assets/images/google.png",
+                  ),
+                  SizedBox(
+                    width: 25,
+                  ),
+                  SquareTile(
+                    imagePath: "assets/images/apple.png",
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Not a member?",
+                    style: TextStyle(
+                      color: Color(0xFF616161)
+                    ),
+                  ),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Text(
+                    "Register Now",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
